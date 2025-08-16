@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button id="menu-toggle" class="menu-toggle">☰</button>
+            <h1>Data Dashboard</h1>
+            <div class="color-picker">
+                <label for="bg-color">Background:</label>
+                <input type="color" id="bg-color" value="#f0f0f0">
+            </div>
+        </header>
+
+        <aside id="sidebar" class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="#">Reports</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <div class="data-grid">
+                <div class="data-container">
+                    <h3>Users</h3>
+                    <div class="data-value">1,240</div>
+                    <div class="data-trend">↑ 12% this month</div>
+                </div>
+                
+                <div class="data-container">
+                    <h3>Revenue</h3>
+                    <div class="data-value">$34,567</div>
+                    <div class="data-trend">↑ 5% this month</div>
+                </div>
+                
+                <div class="data-container">
+                    <h3>Conversion</h3>
+                    <div class="data-value">3.2%</div>
+                    <div class="data-trend">↓ 0.5% this month</div>
+                </div>
+                
+                <div class="data-container">
+                    <h3>Active Sessions</h3>
+                    <div class="data-value">428</div>
+                    <div class="data-trend">↑ 8% this month</div>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h2>Performance Overview</h2>
+                <div class="chart-placeholder"></div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Toggle sidebar
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+        
+        // Change background color
+        document.getElementById('bg-color').addEventListener('input', function() {
+            document.body.style.backgroundColor = this.value;
+        });
+    </script>
+</body>
+</html>
