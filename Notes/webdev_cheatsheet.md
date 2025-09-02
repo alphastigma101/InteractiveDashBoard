@@ -125,7 +125,117 @@ text-align: left | right | center | justify
 text-decoration: none | underline | overline | line-through
 ```
 
+### CSS Position Property Cheat Sheet
+
+| Position Value | Description |
+|---------------|-------------|
+| **Fixed**     | Element remains in the same position relative to the viewport even when the page is scrolled. |
+| **Static**    | Default positioning method. Elements are positioned according to the normal flow of the document. |
+| **Relative**  | Elements are positioned relative to their normal position in the document flow. Other elements will not fill the gap left by this element when adjusted. |
+| **Absolute**  | Positioned relative to its nearest non-static ancestor. Elements with `position: absolute` are taken out of the normal document flow. |
+| **Sticky**    | Combines features of `position: relative` and `position: fixed`. The element is treated as `position: relative` until it reaches a specified threshold, then it becomes `position: fixed`. |
+
+## Example Usage
+
+```css
+.fixed-element {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.relative-element {
+  position: relative;
+  top: 20px;
+  left: 20px;
+}
+
+.absolute-element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.sticky-element {
+  position: sticky;
+  top: 10px;
+}
+```
+
+### CSS Selector Cheat Sheet
+
+| Selector Type    | Description | Syntax Example |
+|-----------------|------------|----------------|
+| **Universal**   | Selects all elements on the page | `* { property: value; }` |
+| **Type**       | Selects all HTML tags/elements of given type in your document | `p { property: value; }` |
+| **ID**         | Selects an element based on the value of its unique id attribute | `#id { property: value; }` |
+| **Class**      | Selects all elements in the document that have the given class attribute | `.class { property: value; }` |
+| **Attribute**  | Selects all elements that have a specified attribute | `a[attribute="value"] { property: value; }` |
+| **Combinators** | Complex selectors consisting of more than one selector having some relationship between them | `selector1 selector2 { }` (descendant)<br>`selector1 + selector2 { }` (adjacent sibling)<br>`selector1 > selector2 { }` (child) |
+| **Pseudo**     | Defines the special state of an element to add an effect to an existing element based on its states | `selector:pseudo-class {`<br>&nbsp;&nbsp;`property: value;`<br>`}` |
+
+## Examples Of Selectors
+```css
+/* universal selector */
+* {
+    background-color: hsl(325, 63%, 82%);
+    text-align: center;
+}
+/* type selector */
+span {
+    background-color: skyblue;
+}
+/* id selector */
+#div1 {
+    color: green;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+/* class selector */
+.div2 {
+    color: orange;
+    text-align: left;
+    font-size: 10px;
+    font-weight: bold;
+}
+/* attribute selector */
+div[style] {
+    text-align: center;
+    color: purple;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: -20px;
+}
+/* combinator selector */
+div>p {
+    color: #009900;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0px;
+    text-align: center;
+}
+/* class selector */
+.box {
+    background-color: yellow;
+    width: 300px;
+    height: 100px;
+    margin: auto;
+    font-size: 30px;
+    text-align: center;
+}
+/* pseudo selector */
+.box:hover {
+    background-color: orange;
+}
+```
+### Pseudo-class Examples
+... 
+
 ### Media Queries
+
+> Note: **Media Queries:** The CSS Media Query is used to make the web page more responsive according to the different screens or media types. Media queries include a block of CSS only if a certain expression is true.
+
 ```css
 @media screen and (max-width: 768px) {
     /* Styles for screens ≤ 768px */

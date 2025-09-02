@@ -74,12 +74,12 @@ function setupEventListeners() {
     document.getElementById('add-book-form').addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Get form values
-        const author = document.getElementById('nameOfAuthor').value;
-        const title = document.getElementById('nameOfTitle').value;
-        const pages = document.getElementById('amountOfPages').value;
+        // Get form values and trim them
+        const author = document.getElementById('nameOfAuthor').value.trim();
+        const title = document.getElementById('nameOfTitle').value.trim();
+        const pages = document.getElementById('amountOfPages').value.trim();
         const isRead = document.getElementById('haveRead').checked; 
-        const published = document.getElementById("yearPublished").value;
+        const published = document.getElementById("yearPublished").value.trim();
 
         Book.AddBook(author, title, published);
         Book.AddPages(pages, author);
@@ -90,6 +90,7 @@ function setupEventListeners() {
         library.setLibrary(map);
 
         displayBooks();
+
     });
 
     document.getElementById('checkout-form').addEventListener('submit', function(e) {
@@ -115,6 +116,7 @@ function setupEventListeners() {
                 displayBooks();
                 found = true;
                 showSearchMessage('Book checked out successfully!', 'success', 'check_out_or_container');
+                
             }
 
         } catch (error) {
